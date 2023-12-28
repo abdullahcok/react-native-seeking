@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.whatsup}>Wassup?</Text>
+      <Text style={styles.wassup}>Wassup?</Text>
       <Text>Fine. What about you?</Text>
       <StatusBar style="auto" />
     </View>
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  whatsup:{
+  wassup:{
     color: '#fff',
     backgroundColor: '#2d2d2d',
     padding: 10,
