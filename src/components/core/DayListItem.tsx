@@ -2,10 +2,10 @@ import { Text, View, StyleSheet } from "react-native"
 
 const days = [...Array(31)].map((val, index) => index + 1)
 
-export default function DayListItem(props) {
+export default function DayListItem({day}: DayListItem) {
     return(
         <View style={styles.box}>
-            <Text style={styles.text}>{props.day}</Text>
+            <Text style={styles.text}>{day}</Text>
           </View>
     )
 }
@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
     text:{
       color: '#2d2d2d',
       fontSize: 50,
+      fontFamily: 'Inter',
     }
   });
