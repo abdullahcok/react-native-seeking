@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
       // width: 100,
       // height: 100,
       flex: 1,
-      aspectRatio: 1/1.02,
+      aspectRatio: 1/0.945,
       borderRadius: 5,
       borderWidth: 1,
       borderColor: '#989898',
