@@ -3,6 +3,9 @@ import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-nativ
 import DayListItem from '../../src/components/core/DayListItem';
 
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+import { AmaticSC_400Regular, AmaticSC_700Bold} from '@expo-google-fonts/amatic-sc';
+import { useEffect } from 'react';
+import { SplashScreen } from 'expo-router';
 
 
 const days = [...Array(31)].map((val, index) => index + 1)
@@ -12,17 +15,23 @@ export default function HomeScreen() {
 
 const [fontsLoaded, fontError] = useFonts({
   Inter: Inter_900Black,
+  AmaticRegular: AmaticSC_400Regular,
+  AmaticBold: AmaticSC_700Bold,
 })
 
+useEffect(() => {
+  if(fontsLoaded || fontError){
+    return SplashScreen.hideAsync()
+  }
+}, [fontsLoaded, fontError])
+
+
 if(!fontsLoaded && !fontError){
-  return <ActivityIndicator/>
+  return null
 }
 
   return (
-
     <View style={styles.container}>
-
-
       <FlatList 
         data={days}
         contentContainerStyle={styles.content}

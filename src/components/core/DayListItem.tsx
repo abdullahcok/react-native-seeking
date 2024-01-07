@@ -1,12 +1,12 @@
-import { Text, View, StyleSheet } from "react-native"
+import { Text, View, StyleSheet, Pressable } from "react-native"
 
 const days = [...Array(31)].map((val, index) => index + 1)
 
 export default function DayListItem({day}: DayListItem) {
     return(
-        <View style={styles.box}>
+        <Pressable style={styles.box}>
             <Text style={styles.text}>{day}</Text>
-          </View>
+        </Pressable>
     )
 }
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     text:{
       color: '#2d2d2d',
-      fontSize: 50,
-      fontFamily: 'Inter',
+      fontSize: 70,
+      fontFamily: 'AmaticBold',
     }
   });
