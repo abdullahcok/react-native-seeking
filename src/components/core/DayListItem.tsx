@@ -1,12 +1,17 @@
 import { Text, View, StyleSheet, Pressable } from "react-native"
+import { Link } from "expo-router";
 
-const days = [...Array(31)].map((val, index) => index + 1)
+type DayListItem = {
+  day: number
+}
 
 export default function DayListItem({day}: DayListItem) {
     return(
-        <Pressable style={styles.box}>
+        <Link href={`/(days)/day${day}`} asChild>
+          <Pressable style={styles.box}>
             <Text style={styles.text}>{day}</Text>
-        </Pressable>
+          </Pressable>
+        </Link>
     )
 }
 
